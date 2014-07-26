@@ -13,4 +13,3 @@ sudo cp drawstuff/src/.libs/libdrawstuff.* /usr/local/lib
 sudo mkdir /usr/local/include/drawstuff
 sudo cp /usr/local/ode/ode-0.11.1/include/drawstuff/drawstuff.h /usr/local/include/drawstuff
 sudo cp /usr/local/ode/ode-0.11.1/include/drawstuff/version.h /usr/local/include/drawstuff
-cd ~

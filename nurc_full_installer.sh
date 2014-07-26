@@ -3,6 +3,10 @@ opencv_latest=false
 if [ ! -e ~/.bash_profile ]; then
     touch ~/.bash_profile
     echo -e "if [ -f ~/.bashrc ]; then\n    source ~/.bashrc\nfi" >> ~/.bash_profile
+else
+    if [ `cat ~/.bash_profile | grep -e "source ~/.bashrc"` != "source ~/.bashrc" ]; then
+        echo -e "if [ -f ~/.bashrc ]; then\n    source ~/.bashrc\nfi" >> ~/.bash_profile
+    fi
 fi
 
 for i in "$@"; do
@@ -12,7 +16,6 @@ for i in "$@"; do
     fi
 done
 
-cd ~
 sudo apt-get update
 sudo apt-get purge -y firefox firefox-globalmenu firefox-gnome-support
 sudo apt-get install -y chromium-browser
@@ -22,10 +25,9 @@ sudo apt-get install -y build-essential
 
 ## Set up workspace
 mkdir -p ~/Code/nurobotics_ws
-cd ~/Code/nurobotics_ws
-# git clone https://github.com/mjzh/Hermes.git
-git clone https://github.com/NURobotics/lacrosse_bot.git
-git clone https://github.com/NURobotics/darwin-op.git
+# git clone https://github.com/mjzh/Hermes.git ~/Code/nurobotics_ws
+git clone https://github.com/NURobotics/lacrosse_bot.git ~/Code/nurobotics_ws
+git clone https://github.com/NURobotics/darwin-op.git ~/Code/nurobotics_ws
 
 source hermes_installer.sh
 source darwin_installer.sh
@@ -33,12 +35,9 @@ source dc_workshops_installer.sh
 
 ## OpenCV Installation
 if [ "$opencv_latest" = true ]; then
-    cd ~/Downloads
-    git clone https://github.com/jayrambhia/Install-OpenCV.git
-    cd Install-OpenCV/Ubuntu
-    sudo chmod +x opencv_latest.sh
-    sudo sh opencv_latest.sh
-    cd ~
+    git clone https://github.com/jayrambhia/Install-OpenCV.git ~/Downloads
+    sudo chmod +x ~/Downloads/Install-OpenCV/Ubuntu/opencv_latest.sh
+    sudo sh ~/Downloads/Install-OpenCV/Ubuntu/opencv_latest.sh
     sudo rm -rf ~/Downloads/Install-OpenCV
 fi
 
