@@ -1,5 +1,5 @@
 ## Webots Installation
-if [ `cat /etc/apt/sources.list | grep -o "deb http://www.cyberbotics.com/debian/ binary-i386/"` != "deb http://www.cyberbotics.com/debian/ binary-i386" ]; then
+if ! grep -q "deb http://www.cyberbotics.com/debian/ binary-i386/" /etc/apt/sources.list; then
     sudo sh -c "echo 'deb http://www.cyberbotics.com/debian/ binary-i386/' >> /etc/apt/sources.list"
 fi
 sudo apt-get update

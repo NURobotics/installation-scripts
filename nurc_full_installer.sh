@@ -4,7 +4,7 @@ if [ ! -e ~/.bash_profile ]; then
     touch ~/.bash_profile
     echo -e "if [ -f ~/.bashrc ]; then\n    source ~/.bashrc\nfi" >> ~/.bash_profile
 else
-    if [ `cat ~/.bash_profile | grep -e "source ~/.bashrc"` != "source ~/.bashrc" ]; then
+    if ! grep -q "source ~/.bashrc" ~/.bashrc; then
         echo -e "if [ -f ~/.bashrc ]; then\n    source ~/.bashrc\nfi" >> ~/.bash_profile
     fi
 fi
