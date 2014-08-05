@@ -17,7 +17,7 @@ for i in "$@"; do
 done
 
 sudo apt-get update
-sudo apt-get purge -y firefox firefox-globalmenu firefox-gnome-support
+sudo apt-get purge -y firefox thunderbird* pidgin* link-grammar-dictionaries-en
 sudo apt-get install -y chromium-browser
 sudo apt-get install -y flashplugin-installer
 sudo apt-get install -y git
@@ -26,12 +26,13 @@ sudo apt-get install -y build-essential
 ## Set up workspace
 mkdir -p ~/Code/nurobotics_ws
 # git clone https://github.com/mjzh/Hermes.git ~/Code/nurobotics_ws
-git clone https://github.com/NURobotics/lacrosse_bot.git ~/Code/nurobotics_ws
-git clone https://github.com/NURobotics/darwin-op.git ~/Code/nurobotics_ws
+# git clone https://github.com/NURobotics/lacrosse_bot.git ~/Code/nurobotics_ws
+# git clone https://github.com/NURobotics/darwin-op.git ~/Code/nurobotics_ws
 
 source hermes_installer.sh
 source darwin_installer.sh
 source dc_workshops_installer.sh
+# source ros_indigo_installer.sh
 
 ## OpenCV Installation
 if [ "$opencv_latest" = true ]; then
@@ -47,3 +48,6 @@ if [ ]; then
     wget http://www.nurobotics.org/wallpapers/NURC.png -P ~/Pictures/Wallpapers
     xfconf-query -c xfce4-desktop -p /backdrop/screen0/monitor0/image-path -s ~/Pictures/Wallpapers/NURC.png
 fi
+
+sudo apt-get update
+sudo apt-get upgrade

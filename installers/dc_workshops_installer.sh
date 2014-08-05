@@ -1,5 +1,10 @@
 ## DC Workshops Setup
-sudo apt-get install -y eagle   # eaglecad 5.12
+wget http://security.ubuntu.com/ubuntu/pool/multiverse/e/eagle/eagle-data_5.12.0-1ubuntu1_all.deb -P /tmp
+sudo dpkg -i /tmp/eagle-data_5.12.0-1ubuntu1_all.deb
+sudo apt-get install -y libjpeg62
+wget http://security.ubuntu.com/ubuntu/pool/multiverse/e/eagle/eagle_5.12.0-1ubuntu1_i386.deb -P /tmp
+sudo dpkg -i /tmp/eagle_5.12.0-1ubuntu1_i386.deb
+
 wget http://ww1.microchip.com/downloads/en/DeviceDoc/MPLABX-v2.15-linux-installer.run -P ~/Downloads
 sudo chmod +x ~/Downloads/MPLABX-v2.15-linux-installer.run
 sudo ~/Downloads/MPLABX-v2.15-linux-installer.run

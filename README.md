@@ -1,8 +1,12 @@
-Installation Scripts
-====================
+Xubuntu 14.04 Pendrive Installation Files
+===
 
-Installers
+Preinstalled Packages
 ---
-+ nurc\_full\_installer.sh => Should only be run once as the initial full installer.
-    * Configures dependencies for the Hermes and DARwIn projects as well as the DC Workshops.
++ ODE
++ Webots
++ MPLABX IDE w/ XC32
++ Arduino IDE
++ Eagle CAD 5.12
++ ROS Indigo
 
