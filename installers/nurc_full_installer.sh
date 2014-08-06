@@ -25,6 +25,7 @@ sudo apt-get install -y build-essential
 
 ## Set up workspace
 mkdir -p ~/Code/nurobotics_ws
+mkdir -p ~/Code/ros_ws
 # git clone https://github.com/mjzh/Hermes.git ~/Code/nurobotics_ws
 # git clone https://github.com/NURobotics/lacrosse_bot.git ~/Code/nurobotics_ws
 # git clone https://github.com/NURobotics/darwin-op.git ~/Code/nurobotics_ws
@@ -36,10 +37,10 @@ source ros_indigo_installer.sh
 
 ## OpenCV Installation
 if [ "$opencv_latest" = true ]; then
-    git clone https://github.com/jayrambhia/Install-OpenCV.git ~/Downloads
-    sudo chmod +x ~/Downloads/Install-OpenCV/Ubuntu/opencv_latest.sh
-    sudo sh ~/Downloads/Install-OpenCV/Ubuntu/opencv_latest.sh
-    sudo rm -rf ~/Downloads/Install-OpenCV
+    git clone https://github.com/jayrambhia/Install-OpenCV.git /tmp
+    sudo chmod +x /tmp/Install-OpenCV/Ubuntu/opencv_latest.sh
+    sudo sh /tmp/Install-OpenCV/Ubuntu/opencv_latest.sh
+    sudo rm -rf /tmp/Install-OpenCV
 fi
 
 ## Configure Look and Feel
