@@ -29,10 +29,10 @@ mkdir -p ~/Code/nurobotics_ws
 # git clone https://github.com/NURobotics/lacrosse_bot.git ~/Code/nurobotics_ws
 # git clone https://github.com/NURobotics/darwin-op.git ~/Code/nurobotics_ws
 
+source dc_workshops_installer.sh
 source hermes_installer.sh
 source darwin_installer.sh
-source dc_workshops_installer.sh
-# source ros_indigo_installer.sh
+source ros_indigo_installer.sh
 
 ## OpenCV Installation
 if [ "$opencv_latest" = true ]; then
