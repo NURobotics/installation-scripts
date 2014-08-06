@@ -37,10 +37,10 @@ source ros_indigo_installer.sh
 
 ## OpenCV Installation
 if [ "$opencv_latest" = true ]; then
-    git clone https://github.com/jayrambhia/Install-OpenCV.git /tmp
-    sudo chmod +x /tmp/Install-OpenCV/Ubuntu/opencv_latest.sh
-    sudo sh /tmp/Install-OpenCV/Ubuntu/opencv_latest.sh
-    sudo rm -rf /tmp/Install-OpenCV
+    git clone https://github.com/jayrambhia/Install-OpenCV.git ~/Downloads
+    sudo chmod +x ~/Downloads/Install-OpenCV/Ubuntu/opencv_latest.sh
+    sudo sh ~/Downloads/Install-OpenCV/Ubuntu/opencv_latest.sh
+    sudo rm -rf ~/Downloads/Install-OpenCV
 fi
 
 ## Configure Look and Feel
