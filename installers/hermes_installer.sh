@@ -12,4 +12,4 @@ sudo make
 sudo make install
 sudo cp drawstuff/src/.libs/libdrawstuff.* /usr/local/lib
 sudo mkdir /usr/local/include/drawstuff
-sudo cp /usr/local/ode/ode-0.11.1/include/drawstuff/*.h /usr/local/include/drawstuff
+sudo cp /usr/local/ode/ode-0.12/include/drawstuff/*.h /usr/local/include/drawstuff
